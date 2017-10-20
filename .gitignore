@@ -96,6 +96,9 @@ $tf/
 # Guidance Automation Toolkit
 *.gpState
 
+# ignore my secrets
+Secret*.*
+
 # ReSharper is a .NET coding add-in
 _ReSharper*/
 *.[Rr]e[Ss]harper
