@@ -262,3 +262,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/receipt-api/Properties/PublishProfiles/receipt-api20171026012555 - Web Deploy.pubxml

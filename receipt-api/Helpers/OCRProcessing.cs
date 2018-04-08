@@ -26,7 +26,7 @@ namespace receipt_api
             using (var client = new HttpClient())
             {
                 string apikey = Secrets.apikey ;
-                string apiendpoint_ocr = @"https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/ocr";                
+                string apiendpoint_ocr = Secrets.apiendpoint_ocr;                
 
                 // Request headers.
                 client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", apikey);
@@ -214,7 +214,7 @@ namespace receipt_api
                     DateTime.TryParse(extractedDateString, System.Globalization.CultureInfo.GetCultureInfo("en-AU"), System.Globalization.DateTimeStyles.None, out extractedDate);
 
                 }
-                if (extractedDate > receiptdate)
+                if (extractedDate > receiptdate && extractedDate <= DateTime.Today)
                 {
                     // we're going to keep the highest date we find (for now)
                     receiptdate = extractedDate;
